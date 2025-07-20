@@ -25,7 +25,7 @@ public class Board {
                  piece.incrementMoveCount();
         }
         else {
-            System.out.println("Invalid move!");
+            System.out.println(piece+": Invalid move!");
         }
     }
     
