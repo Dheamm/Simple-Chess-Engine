@@ -1,0 +1,15 @@
+# NetBeans
+nbproject/private/
+
+# Build output
+build/
+dist/
+
+# Java
+*.class
+*.jar
+
+# OS
+.DS_Store
+Thumbs.db
+
