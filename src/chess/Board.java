@@ -19,14 +19,21 @@ public class Board {
     }
     
     public void movePiece(Piece piece, int destRow, int destColumn){
-        if (piece.isValidMove(destRow, destColumn)) {
-                board[piece.getRow()][piece.getColumn()] = null;
-                 placePiece(piece, destRow, destColumn);
-                 piece.incrementMoveCount();
+        Piece destPiece = getPiece(destRow, destColumn);
+
+        if (destPiece == null || destPiece.getColor() != piece.getColor()){ // Other team o null square.
+            if (piece.isValidMove(destRow, destColumn)) {
+             board[piece.getRow()][piece.getColumn()] = null; // Delete the last position.
+             placePiece(piece, destRow, destColumn);
+             piece.incrementMoveCount();
+            }
+            else {
+                System.out.println(piece+": Invalid move!");
+            }
         }
-        else {
-            System.out.println(piece+": Invalid move!");
-        }
+        else{
+        System.out.println(piece+": There is a piece of your own team");
+            }
     }
     
     public void showBoard() {
