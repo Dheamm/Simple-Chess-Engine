@@ -55,5 +55,9 @@ public abstract class Piece {
     public boolean isValidMove(int destRow, int destColumn){
         return true;
     }
+    
+    protected boolean isPathClear(Board board){
+        return false;
+    }
 
 }
