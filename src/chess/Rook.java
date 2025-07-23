@@ -21,4 +21,9 @@ public class Rook extends Piece {
         return "R" + (getColor().equals("White") ? "W" : "B");
     }
     
+    @Override
+    public boolean isPathClear(Board board){
+        return false;
+    }
+    
 }
